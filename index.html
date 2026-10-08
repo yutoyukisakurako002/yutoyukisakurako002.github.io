@@ -1,12 +1,13 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="An independent research archive documenting questions, investigations, completed work, and exploratory studies by Yuki.">
-  <meta name="theme-color" content="#0c1b25">
-  <title>Yuki — Independent Research Archive</title>
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="An independent research archive documenting questions, investigations, completed work, and exploratory studies by Yuki." name="description"/>
+<meta content="#0c1b25" name="theme-color"/>
+<title>Yuki — Independent Research Archive</title>
+<style>
     :root { --ink:#18303a; --muted:#5d7178; --cream:#f7f7f2; --paper:#fffefa; --line:#d9dfd9; --ocean:#0c2734; --mint:#bde9d6; --accent:#007c71; --coral:#d78c58; --shadow:0 16px 50px rgba(19,42,50,.07); }
     * {box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--cream);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.6} a{color:inherit} button{font:inherit} .wrap{width:min(1150px,calc(100% - 52px));margin-inline:auto}
     .top{height:78px;display:flex;align-items:center;justify-content:space-between;gap:20px}.mark{display:flex;align-items:center;gap:14px;text-decoration:none;font-size:12px;letter-spacing:.17em;font-weight:800;text-transform:uppercase}.mark-circle{background:var(--ocean);color:#dcfff1;border-radius:50%;width:38px;height:38px;display:grid;place-items:center;font-family:Georgia,serif;font-size:24px;letter-spacing:0}.nav{display:flex;gap:32px;align-items:center}.nav a{font-size:13px;font-weight:650;text-decoration:none;color:#526972}.nav a:hover,.foot a:hover{color:var(--accent)}
@@ -18,25 +19,115 @@
     @media(max-width:800px){.nav{gap:18px}.hero{min-height:440px;padding:48px 32px}.intro,.method-grid,.footer-main{display:block}.intro p{margin-top:22px;max-width:100%}.cards{grid-template-columns:1fr}.method-grid .values{margin-top:35px}.footer-panel{border-left:0;border-top:1px solid var(--line);padding:22px 0 0;margin-top:28px}.section-caption{display:none}.hero-side{display:none}}
     @media(max-width:480px){.wrap{width:min(100% - 30px,1150px)}.nav a:nth-child(3),.nav a:nth-child(4){display:none}.mark{font-size:10px;letter-spacing:.07em}.nav{gap:13px}.hero h1{font-size:51px}.hero{border-radius:12px}.hero-actions{flex-direction:column;align-items:start}.card{padding:25px}.section{padding:52px 0}.intro{padding:52px 0}.section-title h2{font-size:35px}}
     .journey-feature{padding:0 0 60px}.journey-feature-inner{border-radius:16px;background:#e6f0e9;border:1px solid #cddfd6;padding:38px 45px;display:flex;align-items:center;justify-content:space-between;gap:35px}.journey-feature-inner h2{font:400 37px/1.13 Georgia,serif;margin:9px 0 13px}.journey-feature-inner p{font-size:14px;color:var(--muted);max-width:620px;margin:0}.journey-cta{display:inline-block;flex-shrink:0;background:var(--ocean);color:white;border-radius:9px;text-decoration:none;font-size:13px;font-weight:750;padding:14px 18px}.journey-cta:hover{background:#205061}@media(max-width:800px){.journey-feature-inner{display:block;padding:30px}.journey-cta{margin-top:22px}}@media(max-width:480px){.nav a:nth-child(3){display:none}}
-  </style>
+  
+    .study-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:5px} .study-link{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-size:13px;font-weight:800;border-radius:8px;padding:11px 14px;background:var(--ocean);color:white} .study-link:hover{background:#27505a}.study-link.secondary{background:#e9f2ed;color:#286e61;border:1px solid #d0e2d7}.card-hint{font-size:12px;color:#78908d;margin:13px 0 0}.card [data-status]{color:inherit}.pill.in-review{background:#e8eef4;color:#4f6479}.mini-metrics{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 18px}.mini-metrics span{font:11px ui-monospace,monospace;background:#f0f4f1;border:1px solid #dfe8e1;padding:7px 10px;border-radius:6px;color:#42665d} @media(max-width:480px){.study-actions{flex-direction:column}.study-link{justify-content:center}}
+
+    /* Layout refinement (2026-10): consistent card header and footer geometry. */
+    .cards { align-items:stretch; }
+    .card {
+      min-width:0;
+      height:100%;
+      overflow-wrap:break-word;
+    }
+    .card-top {
+      display:flex;
+      flex-wrap:wrap;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:10px 14px;
+    }
+    .card-top .number { line-height:1.55; max-width:100%; }
+    .card-top .pill {
+      display:inline-block;
+      flex:0 0 auto;
+      max-width:100%;
+      line-height:1.4;
+      text-align:center;
+    }
+    .card-bottom {
+      display:flex;
+      flex-direction:column;
+      align-items:stretch;
+      justify-content:flex-start;
+      gap:14px;
+      padding-top:17px;
+      min-width:0;
+    }
+    .card-bottom>.tag {
+      display:block;
+      width:100%;
+      line-height:1.55;
+    }
+    .study-actions {
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:10px;
+      width:100%;
+      margin-top:0;
+      min-width:0;
+    }
+    .study-link {
+      display:inline-flex;
+      width:100%;
+      min-width:0;
+      text-align:center;
+      justify-content:center;
+      line-height:1.35;
+      white-space:normal;
+      padding:12px 11px;
+    }
+    .card-bottom>details { align-self:flex-start; max-width:100%; }
+    .mini-metrics { gap:8px; }
+    .mini-metrics span { max-width:100%; }
+    /* Two-column cards have less room for the long editorial labels. */
+    @media (min-width:801px) and (max-width:1040px) {
+      .card-top { flex-direction:column; align-items:flex-start; }
+    }
+    @media (max-width:560px) {
+      .card-top { flex-direction:column; align-items:flex-start; gap:11px; }
+      .card-top .pill { max-width:100%; }
+      .card h3 { margin-top:21px; }
+      .card-bottom { gap:14px; }
+      .study-actions { grid-template-columns:1fr; gap:9px; }
+      .study-link { min-height:45px; }
+    }
+    @media (max-width:380px) {
+      .card { padding:21px; }
+      .card h3 { font-size:25px; }
+      .journey-feature-inner { padding:25px 22px; }
+      .journey-feature-inner h2 { font-size:32px; }
+    }
+    /* Hidden cards must stay hidden when filtered, even with the flex layout. */
+    .cards .card[hidden] { display:none !important; }
+</style>
 </head>
 <body>
-  <header class="top wrap"><a class="mark" href="#home" aria-label="Yuki Research Archive home"><span class="mark-circle">Y.</span><span>Independent Research<br>Archive</span></a><nav class="nav" aria-label="Main navigation"><a href="#research">Research</a><a href="research-journey.html">Journey</a><a href="#principles">Principles</a><a href="#about">About</a></nav></header>
-  <main id="home" class="wrap">
-    <section class="hero" aria-labelledby="hero-title"><div class="hero-inner"><div class="eyebrow">Independent inquiry · ongoing archive</div><h1 id="hero-title">Questions<br>worth <em>keeping.</em></h1><p>A living record of investigations, discoveries, unfinished ideas, and lessons learned. Built to preserve the research process—not just the final result.</p><div class="hero-actions"><a class="btn btn-primary" href="#research">Explore the archive <span aria-hidden="true">↗</span></a><a class="btn btn-outline" href="#principles">How I work <span aria-hidden="true">→</span></a></div></div><span class="hero-side">YUKI / OPEN KNOWLEDGE / EST. 2026</span></section>
-    <section class="intro" aria-label="Introduction"><div><span class="eyebrow">The purpose</span><h2>Research is not just about reaching an answer. It's about documenting how we got there.</h2></div><p>This is a personal archive for careful questions, transparent methods, and work worth revisiting—even when a project doesn't go as planned.</p></section>
-    <section class="section" id="research" aria-labelledby="research-heading"><div class="section-title"><div><span class="eyebrow">01 / Index</span><h2 id="research-heading">Research archive</h2></div><p class="section-caption">Records are listed by current project status. Papers, datasets, and supporting files will be linked when available.</p></div><div class="filters" role="group" aria-label="Filter research by status"><button class="filter" data-filter="all" aria-pressed="true">All research</button><button class="filter" data-filter="completed" aria-pressed="false">Completed</button><button class="filter" data-filter="archived" aria-pressed="false">Exploratory archive</button><button class="filter" data-filter="planned" aria-pressed="false">Future work</button></div><div class="cards" id="project-cards">
-    <article class="card" data-status="completed"><div class="card-top"><span class="number">R-001 / INDEPENDENT STUDY</span><span class="pill">Completed study</span></div><h3>Automation and Productivity in Japan</h3><p>A study of manufacturing labor input, industrial robot density, and productivity in Japan, 1995–2023. The manuscript was substantially revised after reviewer feedback; the journal decision is still pending.</p><div class="card-bottom"><span class="tag">automation · economics · Japan</span><details><summary class="details">Record details</summary><div class="extra"><strong>Current archive status:</strong> The revised manuscript is not posted here while external publication permissions are being checked. The study used seven observations and reported r = 0.61, p = 0.148; this result was not statistically significant. <a href="research-journey.html">Read what I learned →</a></div></details></div></article>
-    <article class="card" data-status="archived"><div class="card-top"><span class="number">R-002 / EXPLORATORY NOTES</span><span class="pill archive">Exploratory / archived</span></div><h3>Ocean Acidification and Coral Reefs</h3><p>An earlier manuscript about ocean acidification and marine ecosystems was not accepted for publication. I keep this experience in my archive because it informed my approach to later research.</p><div class="card-bottom"><span class="tag">marine science · environment</span><details><summary class="details">Record details</summary><div class="extra"><strong>Current archive status:</strong> The editorial letter cited the level of conceptual advance, broader implications, and journal fit; it did not identify a methodological error or dispute the validity of the findings. <a href="research-journey.html">Read what I learned →</a></div></details></div></article>
-    <article class="card" data-status="planned"><div class="card-top"><span class="number">R-003 / RESERVED</span><span class="pill planned">Future work</span></div><h3>Your next research question</h3><p>An open slot for the next independent research project—from a question and literature review to a reproducible methodology and final paper.</p><div class="card-bottom"><span class="tag">topic · to be determined</span><details><summary class="details">Planning template</summary><div class="extra"><strong>Record:</strong> Research question · Motivation · Literature · Methodology · Dataset · Analysis · Findings · Limitations · Paper / DOI.</div></details></div></article>
-    <article class="card" data-status="planned"><div class="card-top"><span class="number">R-004 / RESERVED</span><span class="pill planned">Future work</span></div><h3>Research notebook</h3><p>A future place for smaller investigations, reproducibility notes, experimental failures, and questions that may grow into full studies.</p><div class="card-bottom"><span class="tag">notes · ideas · methods</span><details><summary class="details">Archive philosophy</summary><div class="extra">Smaller exploratory entries should be clearly labeled so readers can distinguish ideas and observations from validated results.</div></details></div></article>
-    </div><div class="empty" id="no-results" role="status">No records match this category.</div><p class="note"><strong>Archive note:</strong> These records describe research work and personal reflection; neither manuscript is described as published in a journal. The full Automation manuscript is not hosted here while its editorial status is unresolved.</p></section>
-  </main>
-  <section class="journey-feature" aria-labelledby="journey-feature-title"><div class="wrap"><div class="journey-feature-inner"><div><span class="eyebrow">Field notes · 2026</span><h2 id="journey-feature-title">Lessons from two research projects.</h2><p>What I learned from my Ocean Acidification research and my Automation Technology research: rejection, revision, evidence, and statistical uncertainty.</p></div><a class="journey-cta" href="research-journey.html">Read the research journey &rarr;</a></div></div></section>
-  <section class="method section" id="principles"><div class="wrap method-grid"><div><span class="eyebrow">02 / Research philosophy</span><h2>Keep the evidence.<br>Keep the uncertainty.</h2><p>A useful research archive shows both what was discovered and what remains unknown. Future versions will include citations, datasets, methods, revision history, and stable paper links whenever possible.</p></div><div class="values"><div class="value"><span class="value-num">01</span><div><strong>Question-driven</strong><p>Start with a specific, meaningful question—not a predetermined conclusion.</p></div></div><div class="value"><span class="value-num">02</span><div><strong>Transparent methodology</strong><p>Document assumptions, sources, limitations, and work others could reproduce.</p></div></div><div class="value"><span class="value-num">03</span><div><strong>Preserve the process</strong><p>Keep a clear distinction between completed research, work in progress, and archived attempts.</p></div></div></div></div></section>
-  <footer id="about" class="wrap"><div class="footer-main"><div><span class="eyebrow">03 / About</span><h2>Curiosity, archived.</h2><p>I'm Yuki. I use this space to document independent research and keep a public record of how my questions and understanding develop over time.</p></div><div class="footer-panel"><h3>About this archive</h3><p>Research records will link to full manuscripts and long-term repositories such as Zenodo once the files have been reviewed and intentionally released.</p><p>No contact details or personal school information are published in this starter version.</p></div></div><div class="small-footer"><span>© <span id="year">2026</span> Yuki · Independent Research Archive</span><a href="#home">Back to top ↑</a></div></footer>
-  <noscript><div class="nojs wrap">JavaScript is disabled. All research cards remain visible; filtering requires JavaScript.</div></noscript>
-  <script>
+<header class="top wrap"><a aria-label="Yuki Research Archive home" class="mark" href="#home"><span class="mark-circle">Y.</span><span>Independent Research<br/>Archive</span></a><nav aria-label="Main navigation" class="nav"><a href="#research">Research</a><a href="research-journey.html">Journey</a><a href="#principles">Principles</a><a href="#about">About</a></nav></header>
+<main class="wrap" id="home">
+<section aria-labelledby="hero-title" class="hero"><div class="hero-inner"><div class="eyebrow">Independent inquiry · ongoing archive</div><h1 id="hero-title">Questions<br/>worth <em>keeping.</em></h1><p>A living record of investigations, discoveries, unfinished ideas, and lessons learned. Built to preserve the research process—not just the final result.</p><div class="hero-actions"><a class="btn btn-primary" href="#research">Explore the archive <span aria-hidden="true">↗</span></a><a class="btn btn-outline" href="#principles">How I work <span aria-hidden="true">→</span></a></div></div><span class="hero-side">YUKI / OPEN KNOWLEDGE / EST. 2026</span></section>
+<section aria-label="Introduction" class="intro"><div><span class="eyebrow">The purpose</span><h2>Research is not just about reaching an answer. It's about documenting how we got there.</h2></div><p>This is a personal archive for careful questions, transparent methods, and work worth revisiting—even when a project doesn't go as planned.</p></section>
+<section aria-labelledby="research-heading" class="section" id="research"><div class="section-title"><div><span class="eyebrow">01 / Index</span><h2 id="research-heading">Research archive</h2></div><p class="section-caption">Open an individual study to read its purpose, approach, findings, and publication status. Full manuscripts are linked only when permitted.</p></div><div aria-label="Filter research by status" class="filters" role="group"><button aria-pressed="true" class="filter" data-filter="all">All research</button><button aria-pressed="false" class="filter" data-filter="completed">Completed research</button><button aria-pressed="false" class="filter" data-filter="archived">Archived manuscripts</button><button aria-pressed="false" class="filter" data-filter="planned">Future work</button></div><div class="cards" id="project-cards">
+<article class="card" data-status="completed"><div class="card-top"><span class="number">R-001 / INDEPENDENT RESEARCH</span><span class="pill in-review">Journal decision pending</span></div>
+<h3>Automation and Productivity in Japan</h3>
+<p>Can industrial robotics help Japan sustain manufacturing output as labor input declines? A 1995–2023 exploratory study using labor-hour, productivity, robot-density, and real value-added data.</p>
+<div class="mini-metrics"><span>7 observations</span><span>r = 0.61</span><span>p = 0.148</span></div>
+<div class="card-bottom"><span class="tag">robotics · economics · Japan</span><div class="study-actions"><a aria-label="Read the research overview of Automation and Productivity in Japan" class="study-link" href="automation-overview.html">Explore study →</a><a class="study-link secondary" href="research-journey.html">Lessons learned ↗</a></div></div>
+</article>
+<article class="card" data-status="archived"><div class="card-top"><span class="number">R-002 / SUBMITTED MANUSCRIPT</span><span class="pill archive">Not accepted · Archived</span></div>
+<h3>Ocean Acidification and Marine Ecosystems</h3>
+<p>An earlier manuscript explored threats from ocean acidification and potential responses. NHSJS did not accept the submission; the project remains part of this archive and the learning behind later work.</p>
+<div class="mini-metrics"><span>environmental science</span><span>research reflection</span></div>
+<div class="card-bottom"><span class="tag">marine science · environmental research</span><div class="study-actions"><a aria-label="Read the overview of Ocean Acidification research" class="study-link" href="ocean-acidification-overview.html">Explore study →</a><a class="study-link secondary" href="research-journey.html">Lessons learned ↗</a></div></div>
+</article>
+<article class="card" data-status="planned"><div class="card-top"><span class="number">R-003 / RESERVED</span><span class="pill planned">Future work</span></div><h3>Your next research question</h3><p>An open slot for the next independent research project—from a question and literature review to a reproducible methodology and final paper.</p><div class="card-bottom"><span class="tag">topic · to be determined</span><details><summary class="details">Planning template</summary><div class="extra"><strong>Record:</strong> Research question · Motivation · Literature · Methodology · Dataset · Analysis · Findings · Limitations · Paper / DOI.</div></details></div></article>
+<article class="card" data-status="planned"><div class="card-top"><span class="number">R-004 / RESERVED</span><span class="pill planned">Future work</span></div><h3>Research notebook</h3><p>A future place for smaller investigations, reproducibility notes, experimental failures, and questions that may grow into full studies.</p><div class="card-bottom"><span class="tag">notes · ideas · methods</span><details><summary class="details">Archive philosophy</summary><div class="extra">Smaller exploratory entries should be clearly labeled so readers can distinguish ideas and observations from validated results.</div></details></div></article>
+</div><div class="empty" id="no-results" role="status">No records match this category.</div><p class="note"><strong>Archive note:</strong> These records describe research work and personal reflection; neither manuscript is described as published in a journal. The full Automation manuscript is not hosted here while its editorial status is unresolved.</p></section>
+</main>
+<section aria-labelledby="journey-feature-title" class="journey-feature"><div class="wrap"><div class="journey-feature-inner"><div><span class="eyebrow">Field notes · 2026</span><h2 id="journey-feature-title">Lessons from two research projects.</h2><p>What I learned from my Ocean Acidification research and my Automation Technology research: rejection, revision, evidence, and statistical uncertainty.</p></div><a class="journey-cta" href="research-journey.html">Read the research journey →</a></div></div></section>
+<section class="method section" id="principles"><div class="wrap method-grid"><div><span class="eyebrow">02 / Research philosophy</span><h2>Keep the evidence.<br/>Keep the uncertainty.</h2><p>A useful research archive shows both what was discovered and what remains unknown. Future versions will include citations, datasets, methods, revision history, and stable paper links whenever possible.</p></div><div class="values"><div class="value"><span class="value-num">01</span><div><strong>Question-driven</strong><p>Start with a specific, meaningful question—not a predetermined conclusion.</p></div></div><div class="value"><span class="value-num">02</span><div><strong>Transparent methodology</strong><p>Document assumptions, sources, limitations, and work others could reproduce.</p></div></div><div class="value"><span class="value-num">03</span><div><strong>Preserve the process</strong><p>Keep a clear distinction between completed research, work in progress, and archived attempts.</p></div></div></div></div></section>
+<footer class="wrap" id="about"><div class="footer-main"><div><span class="eyebrow">03 / About</span><h2>Curiosity, archived.</h2><p>I'm Yuki. I use this space to document independent research and keep a public record of how my questions and understanding develop over time.</p></div><div class="footer-panel"><h3>About this archive</h3><p>Research records will link to full manuscripts and long-term repositories such as Zenodo once the files have been reviewed and intentionally released.</p><p>No contact details or personal school information are published in this starter version.</p></div></div><div class="small-footer"><span>© <span id="year">2026</span> Yuki · Independent Research Archive</span><a href="#home">Back to top ↑</a></div></footer>
+<noscript><div class="nojs wrap">JavaScript is disabled. All research cards remain visible; filtering requires JavaScript.</div></noscript>
+<script>
     (() => {
       const buttons = document.querySelectorAll('[data-filter]');
       const cards = document.querySelectorAll('[data-status]');
