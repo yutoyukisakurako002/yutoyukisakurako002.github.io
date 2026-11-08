@@ -1,5 +1,273 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0c2734"><meta name="description" content="An earlier independent research manuscript exploring threats posed by ocean acidification and possible responses."><title>Ocean &lt;em&gt;Acidification&lt;/em&gt; and Marine Ecosystems — Yuki Independent Research Archive</title><style>
+<!doctype html><html lang="en" data-page-kind="editorial"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0c2734"><meta name="description" content="An earlier independent research manuscript exploring threats posed by ocean acidification and possible responses."><title>Ocean &lt;em&gt;Acidification&lt;/em&gt; and Marine Ecosystems — Yuki Independent Research Archive</title><style>
 :root{--ink:#18303a;--muted:#5d7178;--cream:#f7f7f2;--paper:#fffefa;--line:#d9dfd9;--ocean:#0c2734;--mint:#bde9d6;--accent:#007c71;--shadow:0 16px 50px rgba(19,42,50,.07)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.7 Inter,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}a{color:inherit}.wrap{width:min(1050px,calc(100% - 46px));margin:auto}.top{height:82px;display:flex;justify-content:space-between;align-items:center;gap:15px}.mark{display:flex;align-items:center;gap:14px;text-decoration:none;font-size:12px;letter-spacing:.12em;font-weight:800;text-transform:uppercase}.mark-circle{width:38px;height:38px;flex-shrink:0;border-radius:50%;background:var(--ocean);color:var(--mint);display:grid;place-items:center;font:24px Georgia,serif}.nav{display:flex;gap:22px}.nav a{color:#526972;text-decoration:none;font-size:13px;font-weight:750}.nav a:hover,.back:hover{color:var(--accent)}.back{display:inline-block;color:var(--accent);text-decoration:none;font-size:13px;font-weight:800;margin:28px 0}.hero{border-radius:18px;background:var(--ocean);color:white;padding:65px clamp(26px,6.5vw,80px);position:relative;overflow:hidden}.hero:after{content:'';position:absolute;top:-170px;right:-190px;width:590px;height:590px;border:1px solid #618c81;border-radius:50%;box-shadow:0 0 0 80px rgba(189,233,214,.035),0 0 0 155px rgba(189,233,214,.025);pointer-events:none}.hero>*{position:relative;z-index:1}.eyebrow{color:var(--accent);font-size:11px;letter-spacing:.21em;font-weight:850;text-transform:uppercase}.hero .eyebrow{color:var(--mint)}h1,h2{font-family:Georgia,'Times New Roman',serif;font-weight:400}h1{max-width:870px;letter-spacing:-.045em;font-size:clamp(43px,6vw,70px);line-height:1.12;margin:20px 0 24px}h1 em{color:var(--mint)}.hero p{max-width:690px;color:#c5d9dc;font-size:16px}.chips{display:flex;gap:9px;flex-wrap:wrap;margin-top:25px}.chip{display:inline-block;border-radius:22px;padding:7px 11px;font-size:11px;font-weight:700;color:#dbefe8;background:#244752}.content{max-width:825px;margin:55px auto 95px}.intro{font:27px/1.35 Georgia,serif;margin-bottom:32px}.section{border-top:1px solid var(--line);padding:36px 0}.section h2{font-size:34px;line-height:1.19;margin:10px 0 16px}.section p{font-size:15px;color:#4b636b}.note{border-left:4px solid #318778;background:#e9f2ec;border-radius:0 10px 10px 0;padding:17px 22px;color:#395d56;font-size:14px;margin-top:20px}.note strong{color:#214b45}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:28px 0}.stat{background:#eaf1eb;border:1px solid #d5e2dc;padding:24px 16px;border-radius:12px}.stat b{display:block;font:400 clamp(29px,4vw,42px) Georgia,serif}.stat small{display:block;font-size:12px;color:var(--muted)}.timeline{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:20px 0}.tile{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:21px}.tile b{display:block;font-size:15px}.tile p{font-size:13px;margin:8px 0 0}.button-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:30px}.button{background:var(--ocean);color:white;text-decoration:none;border-radius:8px;font-size:13px;padding:13px 18px;font-weight:750}.button.outline{border:1px solid #a4bbb3;background:transparent;color:var(--ocean)}footer{border-top:1px solid var(--line);padding:25px 0 38px;color:#6e8384;font-size:12px;display:flex;justify-content:space-between;gap:15px}footer a{text-decoration:none}:focus-visible{outline:3px solid #1db9a1;outline-offset:3px}@media(max-width:650px){.wrap{width:calc(100% - 32px)}.nav{gap:12px}.nav a{font-size:12px}.mark{font-size:10px;letter-spacing:.07em}.hero{padding:47px 28px}.content{margin:37px auto 65px}.timeline{grid-template-columns:1fr}.stats{gap:7px}.stat{padding:17px 10px}.stat b{font-size:30px}.section h2{font-size:31px}}@media(max-width:370px){.nav a:last-child{display:none}}
-</style></head><body>
+</style><style>
+/* Embedded theme stylesheet — standalone HTML */
+/* Yuki — Shared light/dark theme across all six research pages.
+   The original page styles, layout, content, and chart data stay unchanged. */
+
+html { color-scheme: light; }
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --ink: #e5f0f1;
+  --muted: #adbec5;
+  --cream: #0b161c;
+  --paper: #13252d;
+  --line: #304750;
+  --ocean: #183542;
+  --navy: #183542;
+  --navy2: #234451;
+  --mint: #bde9d6;
+  --accent: #7de1c7;
+  --teal: #7de1c7;
+  --gold: #d6af7e;
+  --blue: #9cc3db;
+  --shadow: 0 16px 45px rgba(0, 0, 0, 0.24);
+}
+
+/* The switch is inserted in the existing header, on every page. */
+.theme-toggle {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  flex: 0 0 auto;
+  min-height: 39px;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 99px;
+  color: var(--ink);
+  background: var(--paper);
+  font: 700 12px/1.1 system-ui, -apple-system, "Segoe UI", sans-serif;
+  letter-spacing: 0;
+  text-transform: none;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background .15s ease, color .15s ease, border-color .15s ease;
+  white-space: nowrap;
+}
+.theme-toggle:hover { border-color: var(--accent); background: var(--cream); }
+.theme-toggle:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.theme-toggle-icon { display: inline-flex; width: 17px; height: 17px; align-items: center; justify-content: center; }
+.theme-toggle svg { width: 17px; height: 17px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.nav .theme-toggle { margin-left: 1px; }
+html[data-page-kind="dashboard"] header .theme-toggle { margin-left: 4px; }
+@media (max-width: 650px) {
+  .theme-toggle { width: 41px; height: 41px; min-height: 41px; padding: 0; }
+  .theme-toggle-label { display: none; }
+  .nav .theme-toggle { margin-left: 0; }
+  html[data-page-kind="editorial"] .top { gap: 8px; }
+  html[data-page-kind="editorial"] .nav { gap: 10px; }
+  html[data-page-kind="dashboard"] header { gap: 8px; }
+}
+@media (prefers-reduced-motion: reduce) { .theme-toggle { transition: none; } }
+
+/* Surface and typography contrast for editorial pages. */
+html[data-theme="dark"] .nav a,
+html[data-theme="dark"] .section p,
+html[data-theme="dark"] .article > p,
+html[data-theme="dark"] .article section > p,
+html[data-theme="dark"] .footer-main p,
+html[data-theme="dark"] .small-footer,
+html[data-theme="dark"] footer,
+html[data-theme="dark"] .number,
+html[data-theme="dark"] .tag,
+html[data-theme="dark"] .card-hint { color: var(--muted); }
+html[data-theme="dark"] .mark-circle,
+html[data-theme="dark"] .seal { background: #1b4250; color: #c6f5e5; }
+html[data-theme="dark"] .hero { background-color: #15333f; }
+html[data-theme="dark"] .hero p { color: #c6dadd; }
+html[data-theme="dark"] .card { background: var(--paper); border-color: var(--line); }
+html[data-theme="dark"] .card p { color: var(--muted); }
+html[data-theme="dark"] .note,
+html[data-theme="dark"] .side-note,
+html[data-theme="dark"] .extra,
+html[data-theme="dark"] .reading,
+html[data-theme="dark"] .milestone-banner,
+html[data-theme="dark"] .journey-feature-inner {
+  background: #1b343b; color: #c1d5d9; border-color: #355b59;
+}
+html[data-theme="dark"] .note strong,
+html[data-theme="dark"] .side-note strong,
+html[data-theme="dark"] .extra strong,
+html[data-theme="dark"] .milestone-banner strong { color: #e5f5ef; }
+html[data-theme="dark"] .method { background: #142931; border-color: var(--line); }
+html[data-theme="dark"] .value { border-color: var(--line); }
+html[data-theme="dark"] .pill,
+html[data-theme="dark"] .pill.accepted,
+html[data-theme="dark"] .pill.ongoing,
+html[data-theme="dark"] .pill.archive,
+html[data-theme="dark"] .pill.planned,
+html[data-theme="dark"] .pill.in-review,
+html[data-theme="dark"] .mini-metrics span { background: #23434b; color: #c5e9df; border-color: #3b5d64; }
+html[data-theme="dark"] .stat,
+html[data-theme="dark"] .metric,
+html[data-theme="dark"] .event,
+html[data-theme="dark"] .lesson,
+html[data-theme="dark"] .tile { background: #1b343b; border-color: #35535a; }
+html[data-theme="dark"] .event .date,
+html[data-theme="dark"] .metric span,
+html[data-theme="dark"] .reading p,
+html[data-theme="dark"] .reading .subtle,
+html[data-theme="dark"] .side-note,
+html[data-theme="dark"] .lesson p,
+html[data-theme="dark"] .event p { color: var(--muted); }
+html[data-theme="dark"] .study-link.data-link,
+html[data-theme="dark"] .study-link.secondary,
+html[data-theme="dark"] .btn.ghost { background: #21483f; color: #bff5df; border-color: #406f63; }
+html[data-theme="dark"] .study-link.data-link:hover,
+html[data-theme="dark"] .study-link.secondary:hover { background: #2b594c; }
+html[data-theme="dark"] .button.outline { color: var(--accent); border-color: #557b77; }
+html[data-theme="dark"] .filter[aria-pressed="true"] { background: #256258; border-color: #63bda7; color: #f2fff9; }
+html[data-theme="dark"] .journey-cta,
+html[data-theme="dark"] .study-link:not(.data-link):not(.secondary) { background: #235446; color: #effff8; }
+html[data-theme="dark"] .journey-cta:hover { background: #2d6957; }
+html[data-theme="dark"] .nojs { background: #42351e; color: #f7e6ba; }
+
+/* Rich data dashboards: tables, tabs, callouts, selection states. */
+html[data-theme="dark"][data-page-kind="dashboard"] .section,
+html[data-theme="dark"][data-page-kind="dashboard"] .stat,
+html[data-theme="dark"][data-page-kind="dashboard"] details.disclosure,
+html[data-theme="dark"][data-page-kind="dashboard"] .disclosure { background: var(--paper); border-color: var(--line); }
+html[data-theme="dark"] .tab,
+html[data-theme="dark"] .year { background: #1d343c; color: #bbced2; border-color: var(--line); }
+html[data-theme="dark"] .tab[aria-pressed="true"],
+html[data-theme="dark"] .year[aria-pressed="true"] { background: #246658; color: #f4fff8; border-color: #56baa4; }
+html[data-theme="dark"] .chart-frame { background: #152a32; border-color: #34505a; }
+html[data-theme="dark"] .legend span,
+html[data-theme="dark"] .reading p,
+html[data-theme="dark"] .reading .subtle,
+html[data-theme="dark"] .axis-label,
+html[data-theme="dark"] .axis-note { color: var(--muted); }
+html[data-theme="dark"] .datum,
+html[data-theme="dark"] .reading,
+html[data-theme="dark"] .metric { background: #1c363e; }
+html[data-theme="dark"] .datum .eyebrow,
+html[data-theme="dark"] .reading .eyebrow { color: #8ddbc8; }
+html[data-theme="dark"] .reading hr { border-color: var(--line); }
+html[data-theme="dark"] .data-table th,
+html[data-theme="dark"] th { background: #25443d; color: #d2f2e5; }
+html[data-theme="dark"] .data-table td,
+html[data-theme="dark"] td { border-color: #304750; }
+html[data-theme="dark"] .data-table td:first-child,
+html[data-theme="dark"] .data-table th:first-child,
+html[data-theme="dark"] td:first-child,
+html[data-theme="dark"] th:first-child { background: #20353b; }
+html[data-theme="dark"] .data-table tr:hover td,
+html[data-theme="dark"] tr:hover td { background: #28454b; }
+html[data-theme="dark"] .warning { background: #3a3025; color: #f1d8b4; border-color: #bd9258; }
+html[data-theme="dark"] .source-grid a { border-color: var(--line); }
+html[data-theme="dark"] .source-grid a:hover,
+html[data-theme="dark"] .source-list a:hover { border-color: var(--accent); }
+html[data-theme="dark"] .btn.ghost { color: #c9f0e4; }
+/* Some tabs use CSS-only checked states rather than aria-pressed. */
+html[data-theme="dark"] .tabs:has(#tab-co2:checked) label[for="tab-co2"],
+html[data-theme="dark"] .tabs:has(#tab-coral:checked) label[for="tab-coral"],
+html[data-theme="dark"] .tabs:has(#tab-model:checked) label[for="tab-model"],
+html[data-theme="dark"] #mode-output:checked ~ .tabs label[for="mode-output"],
+html[data-theme="dark"] #mode-robots:checked ~ .tabs label[for="mode-robots"],
+html[data-theme="dark"] #mode-scatter:checked ~ .tabs label[for="mode-scatter"] { background: #246658; border-color: #56baa4; color: #f4fff8; }
+
+/* Existing scientific SVGs use presentation attributes; recolor axes, not the data. */
+html[data-theme="dark"] .chart-frame svg rect[fill="#f8faf8"] { fill: #152a32; }
+html[data-theme="dark"] .chart-frame svg line[stroke="#dce6e0"],
+html[data-theme="dark"] .chart-frame svg line[stroke="#dce7e0"],
+html[data-theme="dark"] .chart-frame svg line[stroke="#9db5ae"],
+html[data-theme="dark"] .chart-frame svg line[stroke="#9dafb9"] { stroke: #3d5961; }
+html[data-theme="dark"] .chart-frame svg text[fill="#718783"],
+html[data-theme="dark"] .chart-frame svg text[fill="#677f7e"],
+html[data-theme="dark"] .chart-frame svg text[fill="#697f7c"] { fill: #b7cbd0; }
+html[data-theme="dark"] .chart-frame svg text[fill="#007c71"],
+html[data-theme="dark"] .chart-frame svg text[fill="#16796e"] { fill: #7de1c7; }
+html[data-theme="dark"] .chart-frame svg text[fill="#4d7895"] { fill: #a2c4e3; }
+html[data-theme="dark"] .chart-frame svg text[fill="#b17742"] { fill: #e4ba84; }
+html[data-theme="dark"] .chart-frame svg polyline[stroke="#007c71"],
+html[data-theme="dark"] .chart-frame svg polyline[stroke="#16796e"] { stroke: #7de1c7; }
+html[data-theme="dark"] .chart-frame svg polyline[stroke="#64889a"],
+html[data-theme="dark"] .chart-frame svg polyline[stroke="#4d7895"] { stroke: #a2c4e3; }
+html[data-theme="dark"] .chart-frame svg polyline[stroke="#b37d48"],
+html[data-theme="dark"] .chart-frame svg polyline[stroke="#b17742"] { stroke: #e4ba84; }
+html[data-theme="dark"] .chart-frame svg circle[fill="#007c71"],
+html[data-theme="dark"] .chart-frame svg circle[fill="#16796e"] { fill: #7de1c7; }
+html[data-theme="dark"] .chart-frame svg circle[fill="#64889a"],
+html[data-theme="dark"] .chart-frame svg circle[fill="#4d7895"] { fill: #a2c4e3; }
+html[data-theme="dark"] .chart-frame svg circle[fill="#b37d48"],
+html[data-theme="dark"] .chart-frame svg circle[fill="#b17742"] { fill: #e4ba84; }
+html[data-theme="dark"] .chart-frame svg circle[stroke="white"] { stroke: #122830; }
+
+</style>
+<script>
+/* Embedded theme controller — standalone HTML */
+/* Yuki Research Archive: accessible light/dark switch.
+   Chooses a saved preference, otherwise follows the device theme. */
+(() => {
+  'use strict';
+  const KEY = 'yuki-research-archive-theme';
+  const root = document.documentElement;
+  const system = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+  let saved = null;
+  try { saved = window.localStorage.getItem(KEY); } catch (_) { /* storage optional */ }
+  const hasSaved = saved === 'dark' || saved === 'light';
+  let current = hasSaved ? saved : (system && system.matches ? 'dark' : 'light');
+  let button = null;
+
+  const moon = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.6 13.2A9 9 0 0 1 10.8 3.4 9 9 0 1 0 20.6 13.2Z"/></svg>';
+  const sun = '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>';
+
+  function renderButton() {
+    if (!button) return;
+    const next = current === 'dark' ? 'light' : 'dark';
+    button.setAttribute('aria-label', `Switch to ${next} mode`);
+    button.setAttribute('title', `Switch to ${next} mode`);
+    button.setAttribute('aria-pressed', String(current === 'dark'));
+    button.innerHTML = `<span class="theme-toggle-icon">${next === 'dark' ? moon : sun}</span><span class="theme-toggle-label">${next === 'dark' ? 'Dark mode' : 'Light mode'}</span>`;
+  }
+
+  function apply(value) {
+    current = value;
+    root.setAttribute('data-theme', value);
+    root.style.colorScheme = value;
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute('content', value === 'dark' ? '#0b161c' : '#f7f7f2');
+    renderButton();
+  }
+
+  // Execute while parsing <head> so the white page does not flash before dark mode.
+  apply(current);
+
+  function mount() {
+    if (document.querySelector('.theme-toggle')) return;
+    const header = document.querySelector('header');
+    if (!header) return;
+    const nav = header.querySelector('.nav');
+    button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'theme-toggle';
+    button.addEventListener('click', () => {
+      const next = current === 'dark' ? 'light' : 'dark';
+      try { window.localStorage.setItem(KEY, next); } catch (_) { /* still works for this page */ }
+      apply(next);
+    });
+    if (nav) nav.appendChild(button);
+    else header.appendChild(button);
+    renderButton();
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', mount, {once:true});
+  else mount();
+
+  if (system) {
+    const followSystem = (event) => {
+      let remembered = null;
+      try { remembered = window.localStorage.getItem(KEY); } catch (_) {}
+      if (remembered !== 'dark' && remembered !== 'light') apply(event.matches ? 'dark' : 'light');
+    };
+    if (typeof system.addEventListener === 'function') system.addEventListener('change', followSystem);
+    else if (typeof system.addListener === 'function') system.addListener(followSystem);
+  }
+})();
+
+</script>
+</head><body>
  <header class="top wrap"><a class="mark" href="index.html"><span class="mark-circle">Y.</span><span>Independent Research<br>Archive</span></a><nav class="nav"><a href="index.html#research">Research</a><a href="research-journey.html">Journey</a><a href="index.html#about">About</a></nav></header><main class="wrap"><a href="index.html#research" class="back">← Back to research archive</a><section class="hero"><div class="eyebrow">R-002 / ARCHIVED SUBMISSION</div><h1>Ocean <em>Acidification</em> and Marine Ecosystems</h1><p>An earlier independent research manuscript exploring threats posed by ocean acidification and possible responses.</p><div class="chips"><span class="chip">Environmental research</span><span class="chip">Submitted to NHSJS</span><span class="chip">Not accepted · Archived</span></div></section><article class="content"><p class="intro">This was a real manuscript and journal submission, not merely an unfinished idea. It remains part of the archive because it shaped how I approached later research.</p><section class="section"><div class="eyebrow">01 / Original question</div><h2>What I set out to explore</h2><p>The submitted manuscript was titled <em>“To what extent does Ocean Acidification threaten the Marine Ecosystem, and what can we do about it?”</em> It explored an environmental problem and possible ways to respond to it.</p><div class="note"><strong>About this record:</strong> The original manuscript is not uploaded here. Its accompanying working-data dashboard reconstructs values and a simplified chemical model from contemporaneous notes; these are not independently validated ocean observations. The coral-cover series has an unresolved source gap.</div></section><section class="section"><div class="eyebrow">02 / Editorial outcome</div><h2>What the NHSJS decision said</h2><p>NHSJS did not accept the manuscript. Its editorial message pointed to the level of conceptual advance, broader implications, and fit with the journal’s scope and readership when explaining its publication decision.</p><p>The letter did not give a detailed methodology-specific rejection or expressly challenge the validity of the study’s findings. It encouraged considering other journals that might be a better fit.</p></section><section class="section"><div class="eyebrow">03 / Lessons</div><h2>Why I am preserving this work</h2><p>The experience made me think more carefully about what a research question adds to existing understanding, how to communicate significance, and how an idea fits an intended audience. I carried those lessons into my later Automation research, which underwent substantial methodological revision as well.</p><p>A journal rejection is a publication outcome, not the same thing as a determination that nothing was learned.</p></section><section class="section"><div class="eyebrow">04 / Reconstructed research data</div><h2>Explore the original data notes</h2><p>The archived notes contain eight time points from 1960 through 2025 for atmospheric CO₂, an ocean-pH series, simplified calculated carbonate-ion concentrations, and proposed coral-cover values. The dashboard allows readers to inspect the year-by-year values and the original calculation assumptions.</p><div class="note"><strong>Source caution:</strong> The coral-cover entries have not been traced to one valid, consistent observational source. The graphs show an early research reconstruction, not independently verified global coral loss or evidence of causation.</div><div class="button-row"><a class="button" href="ocean-data.html">Explore ocean data →</a></div></section><section class="section"><div class="eyebrow">05 / Archive status</div><h2>A documented step in the research journey</h2><p>This entry is an archived submitted manuscript with a confirmed nonacceptance decision. It is not presented as a peer-reviewed or published paper, and the full text is not hosted here.</p><div class="note"><strong>Transparency:</strong> This overview summarizes the project’s title and the editorial outcome without attributing detailed technical criticism that the letter did not contain.</div></section><div class="button-row"><a class="button" href="research-journey.html">Read what I learned →</a><a class="button outline" href="index.html#research">All research records ↗</a></div></article></main><footer class="wrap"><span>© 2026 Yuki · Independent Research Archive</span><a href="index.html">Back to archive ↑</a></footer></body></html>

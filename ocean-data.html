@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0c2734">
+<html lang="en" data-page-kind="dashboard"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0c2734">
 <meta name="description" content="Historical Ocean Acidification research data from an early-stage study: CO2, pH, modeled carbonate chemistry and archived coral-cover notes.">
 <title>Ocean Acidification — Research Data | Yuki Archive</title>
 <style>
@@ -42,7 +42,275 @@
 .year-picker>#choose-2025:checked~.years label[for="choose-2025"]{background:var(--teal);border-color:var(--teal);color:#fff;}
 .year-picker>#choose-2025:checked~.year-panels>#metrics-2025{display:grid;}
 .year-picker>#choose-2025:focus-visible~.years label[for="choose-2025"]{outline:3px solid #20b49e;outline-offset:3px;}
-</style></head><body>
+</style><style>
+/* Embedded theme stylesheet — standalone HTML */
+/* Yuki — Shared light/dark theme across all six research pages.
+   The original page styles, layout, content, and chart data stay unchanged. */
+
+html { color-scheme: light; }
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --ink: #e5f0f1;
+  --muted: #adbec5;
+  --cream: #0b161c;
+  --paper: #13252d;
+  --line: #304750;
+  --ocean: #183542;
+  --navy: #183542;
+  --navy2: #234451;
+  --mint: #bde9d6;
+  --accent: #7de1c7;
+  --teal: #7de1c7;
+  --gold: #d6af7e;
+  --blue: #9cc3db;
+  --shadow: 0 16px 45px rgba(0, 0, 0, 0.24);
+}
+
+/* The switch is inserted in the existing header, on every page. */
+.theme-toggle {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  flex: 0 0 auto;
+  min-height: 39px;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 99px;
+  color: var(--ink);
+  background: var(--paper);
+  font: 700 12px/1.1 system-ui, -apple-system, "Segoe UI", sans-serif;
+  letter-spacing: 0;
+  text-transform: none;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background .15s ease, color .15s ease, border-color .15s ease;
+  white-space: nowrap;
+}
+.theme-toggle:hover { border-color: var(--accent); background: var(--cream); }
+.theme-toggle:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.theme-toggle-icon { display: inline-flex; width: 17px; height: 17px; align-items: center; justify-content: center; }
+.theme-toggle svg { width: 17px; height: 17px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.nav .theme-toggle { margin-left: 1px; }
+html[data-page-kind="dashboard"] header .theme-toggle { margin-left: 4px; }
+@media (max-width: 650px) {
+  .theme-toggle { width: 41px; height: 41px; min-height: 41px; padding: 0; }
+  .theme-toggle-label { display: none; }
+  .nav .theme-toggle { margin-left: 0; }
+  html[data-page-kind="editorial"] .top { gap: 8px; }
+  html[data-page-kind="editorial"] .nav { gap: 10px; }
+  html[data-page-kind="dashboard"] header { gap: 8px; }
+}
+@media (prefers-reduced-motion: reduce) { .theme-toggle { transition: none; } }
+
+/* Surface and typography contrast for editorial pages. */
+html[data-theme="dark"] .nav a,
+html[data-theme="dark"] .section p,
+html[data-theme="dark"] .article > p,
+html[data-theme="dark"] .article section > p,
+html[data-theme="dark"] .footer-main p,
+html[data-theme="dark"] .small-footer,
+html[data-theme="dark"] footer,
+html[data-theme="dark"] .number,
+html[data-theme="dark"] .tag,
+html[data-theme="dark"] .card-hint { color: var(--muted); }
+html[data-theme="dark"] .mark-circle,
+html[data-theme="dark"] .seal { background: #1b4250; color: #c6f5e5; }
+html[data-theme="dark"] .hero { background-color: #15333f; }
+html[data-theme="dark"] .hero p { color: #c6dadd; }
+html[data-theme="dark"] .card { background: var(--paper); border-color: var(--line); }
+html[data-theme="dark"] .card p { color: var(--muted); }
+html[data-theme="dark"] .note,
+html[data-theme="dark"] .side-note,
+html[data-theme="dark"] .extra,
+html[data-theme="dark"] .reading,
+html[data-theme="dark"] .milestone-banner,
+html[data-theme="dark"] .journey-feature-inner {
+  background: #1b343b; color: #c1d5d9; border-color: #355b59;
+}
+html[data-theme="dark"] .note strong,
+html[data-theme="dark"] .side-note strong,
+html[data-theme="dark"] .extra strong,
+html[data-theme="dark"] .milestone-banner strong { color: #e5f5ef; }
+html[data-theme="dark"] .method { background: #142931; border-color: var(--line); }
+html[data-theme="dark"] .value { border-color: var(--line); }
+html[data-theme="dark"] .pill,
+html[data-theme="dark"] .pill.accepted,
+html[data-theme="dark"] .pill.ongoing,
+html[data-theme="dark"] .pill.archive,
+html[data-theme="dark"] .pill.planned,
+html[data-theme="dark"] .pill.in-review,
+html[data-theme="dark"] .mini-metrics span { background: #23434b; color: #c5e9df; border-color: #3b5d64; }
+html[data-theme="dark"] .stat,
+html[data-theme="dark"] .metric,
+html[data-theme="dark"] .event,
+html[data-theme="dark"] .lesson,
+html[data-theme="dark"] .tile { background: #1b343b; border-color: #35535a; }
+html[data-theme="dark"] .event .date,
+html[data-theme="dark"] .metric span,
+html[data-theme="dark"] .reading p,
+html[data-theme="dark"] .reading .subtle,
+html[data-theme="dark"] .side-note,
+html[data-theme="dark"] .lesson p,
+html[data-theme="dark"] .event p { color: var(--muted); }
+html[data-theme="dark"] .study-link.data-link,
+html[data-theme="dark"] .study-link.secondary,
+html[data-theme="dark"] .btn.ghost { background: #21483f; color: #bff5df; border-color: #406f63; }
+html[data-theme="dark"] .study-link.data-link:hover,
+html[data-theme="dark"] .study-link.secondary:hover { background: #2b594c; }
+html[data-theme="dark"] .button.outline { color: var(--accent); border-color: #557b77; }
+html[data-theme="dark"] .filter[aria-pressed="true"] { background: #256258; border-color: #63bda7; color: #f2fff9; }
+html[data-theme="dark"] .journey-cta,
+html[data-theme="dark"] .study-link:not(.data-link):not(.secondary) { background: #235446; color: #effff8; }
+html[data-theme="dark"] .journey-cta:hover { background: #2d6957; }
+html[data-theme="dark"] .nojs { background: #42351e; color: #f7e6ba; }
+
+/* Rich data dashboards: tables, tabs, callouts, selection states. */
+html[data-theme="dark"][data-page-kind="dashboard"] .section,
+html[data-theme="dark"][data-page-kind="dashboard"] .stat,
+html[data-theme="dark"][data-page-kind="dashboard"] details.disclosure,
+html[data-theme="dark"][data-page-kind="dashboard"] .disclosure { background: var(--paper); border-color: var(--line); }
+html[data-theme="dark"] .tab,
+html[data-theme="dark"] .year { background: #1d343c; color: #bbced2; border-color: var(--line); }
+html[data-theme="dark"] .tab[aria-pressed="true"],
+html[data-theme="dark"] .year[aria-pressed="true"] { background: #246658; color: #f4fff8; border-color: #56baa4; }
+html[data-theme="dark"] .chart-frame { background: #152a32; border-color: #34505a; }
+html[data-theme="dark"] .legend span,
+html[data-theme="dark"] .reading p,
+html[data-theme="dark"] .reading .subtle,
+html[data-theme="dark"] .axis-label,
+html[data-theme="dark"] .axis-note { color: var(--muted); }
+html[data-theme="dark"] .datum,
+html[data-theme="dark"] .reading,
+html[data-theme="dark"] .metric { background: #1c363e; }
+html[data-theme="dark"] .datum .eyebrow,
+html[data-theme="dark"] .reading .eyebrow { color: #8ddbc8; }
+html[data-theme="dark"] .reading hr { border-color: var(--line); }
+html[data-theme="dark"] .data-table th,
+html[data-theme="dark"] th { background: #25443d; color: #d2f2e5; }
+html[data-theme="dark"] .data-table td,
+html[data-theme="dark"] td { border-color: #304750; }
+html[data-theme="dark"] .data-table td:first-child,
+html[data-theme="dark"] .data-table th:first-child,
+html[data-theme="dark"] td:first-child,
+html[data-theme="dark"] th:first-child { background: #20353b; }
+html[data-theme="dark"] .data-table tr:hover td,
+html[data-theme="dark"] tr:hover td { background: #28454b; }
+html[data-theme="dark"] .warning { background: #3a3025; color: #f1d8b4; border-color: #bd9258; }
+html[data-theme="dark"] .source-grid a { border-color: var(--line); }
+html[data-theme="dark"] .source-grid a:hover,
+html[data-theme="dark"] .source-list a:hover { border-color: var(--accent); }
+html[data-theme="dark"] .btn.ghost { color: #c9f0e4; }
+/* Some tabs use CSS-only checked states rather than aria-pressed. */
+html[data-theme="dark"] .tabs:has(#tab-co2:checked) label[for="tab-co2"],
+html[data-theme="dark"] .tabs:has(#tab-coral:checked) label[for="tab-coral"],
+html[data-theme="dark"] .tabs:has(#tab-model:checked) label[for="tab-model"],
+html[data-theme="dark"] #mode-output:checked ~ .tabs label[for="mode-output"],
+html[data-theme="dark"] #mode-robots:checked ~ .tabs label[for="mode-robots"],
+html[data-theme="dark"] #mode-scatter:checked ~ .tabs label[for="mode-scatter"] { background: #246658; border-color: #56baa4; color: #f4fff8; }
+
+/* Existing scientific SVGs use presentation attributes; recolor axes, not the data. */
+html[data-theme="dark"] .chart-frame svg rect[fill="#f8faf8"] { fill: #152a32; }
+html[data-theme="dark"] .chart-frame svg line[stroke="#dce6e0"],
+html[data-theme="dark"] .chart-frame svg line[stroke="#dce7e0"],
+html[data-theme="dark"] .chart-frame svg line[stroke="#9db5ae"],
+html[data-theme="dark"] .chart-frame svg line[stroke="#9dafb9"] { stroke: #3d5961; }
+html[data-theme="dark"] .chart-frame svg text[fill="#718783"],
+html[data-theme="dark"] .chart-frame svg text[fill="#677f7e"],
+html[data-theme="dark"] .chart-frame svg text[fill="#697f7c"] { fill: #b7cbd0; }
+html[data-theme="dark"] .chart-frame svg text[fill="#007c71"],
+html[data-theme="dark"] .chart-frame svg text[fill="#16796e"] { fill: #7de1c7; }
+html[data-theme="dark"] .chart-frame svg text[fill="#4d7895"] { fill: #a2c4e3; }
+html[data-theme="dark"] .chart-frame svg text[fill="#b17742"] { fill: #e4ba84; }
+html[data-theme="dark"] .chart-frame svg polyline[stroke="#007c71"],
+html[data-theme="dark"] .chart-frame svg polyline[stroke="#16796e"] { stroke: #7de1c7; }
+html[data-theme="dark"] .chart-frame svg polyline[stroke="#64889a"],
+html[data-theme="dark"] .chart-frame svg polyline[stroke="#4d7895"] { stroke: #a2c4e3; }
+html[data-theme="dark"] .chart-frame svg polyline[stroke="#b37d48"],
+html[data-theme="dark"] .chart-frame svg polyline[stroke="#b17742"] { stroke: #e4ba84; }
+html[data-theme="dark"] .chart-frame svg circle[fill="#007c71"],
+html[data-theme="dark"] .chart-frame svg circle[fill="#16796e"] { fill: #7de1c7; }
+html[data-theme="dark"] .chart-frame svg circle[fill="#64889a"],
+html[data-theme="dark"] .chart-frame svg circle[fill="#4d7895"] { fill: #a2c4e3; }
+html[data-theme="dark"] .chart-frame svg circle[fill="#b37d48"],
+html[data-theme="dark"] .chart-frame svg circle[fill="#b17742"] { fill: #e4ba84; }
+html[data-theme="dark"] .chart-frame svg circle[stroke="white"] { stroke: #122830; }
+
+</style>
+<script>
+/* Embedded theme controller — standalone HTML */
+/* Yuki Research Archive: accessible light/dark switch.
+   Chooses a saved preference, otherwise follows the device theme. */
+(() => {
+  'use strict';
+  const KEY = 'yuki-research-archive-theme';
+  const root = document.documentElement;
+  const system = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+  let saved = null;
+  try { saved = window.localStorage.getItem(KEY); } catch (_) { /* storage optional */ }
+  const hasSaved = saved === 'dark' || saved === 'light';
+  let current = hasSaved ? saved : (system && system.matches ? 'dark' : 'light');
+  let button = null;
+
+  const moon = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.6 13.2A9 9 0 0 1 10.8 3.4 9 9 0 1 0 20.6 13.2Z"/></svg>';
+  const sun = '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>';
+
+  function renderButton() {
+    if (!button) return;
+    const next = current === 'dark' ? 'light' : 'dark';
+    button.setAttribute('aria-label', `Switch to ${next} mode`);
+    button.setAttribute('title', `Switch to ${next} mode`);
+    button.setAttribute('aria-pressed', String(current === 'dark'));
+    button.innerHTML = `<span class="theme-toggle-icon">${next === 'dark' ? moon : sun}</span><span class="theme-toggle-label">${next === 'dark' ? 'Dark mode' : 'Light mode'}</span>`;
+  }
+
+  function apply(value) {
+    current = value;
+    root.setAttribute('data-theme', value);
+    root.style.colorScheme = value;
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute('content', value === 'dark' ? '#0b161c' : '#f7f7f2');
+    renderButton();
+  }
+
+  // Execute while parsing <head> so the white page does not flash before dark mode.
+  apply(current);
+
+  function mount() {
+    if (document.querySelector('.theme-toggle')) return;
+    const header = document.querySelector('header');
+    if (!header) return;
+    const nav = header.querySelector('.nav');
+    button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'theme-toggle';
+    button.addEventListener('click', () => {
+      const next = current === 'dark' ? 'light' : 'dark';
+      try { window.localStorage.setItem(KEY, next); } catch (_) { /* still works for this page */ }
+      apply(next);
+    });
+    if (nav) nav.appendChild(button);
+    else header.appendChild(button);
+    renderButton();
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', mount, {once:true});
+  else mount();
+
+  if (system) {
+    const followSystem = (event) => {
+      let remembered = null;
+      try { remembered = window.localStorage.getItem(KEY); } catch (_) {}
+      if (remembered !== 'dark' && remembered !== 'light') apply(event.matches ? 'dark' : 'light');
+    };
+    if (typeof system.addEventListener === 'function') system.addEventListener('change', followSystem);
+    else if (typeof system.addListener === 'function') system.addListener(followSystem);
+  }
+})();
+
+</script>
+</head><body>
 <header class="shell"><a href="index.html" class="brand"><span class="seal">Y.</span><span>Independent Research<br>Archive</span></a><a href="ocean-acidification-overview.html" class="headlink">← Back to study</a></header>
 <main class="shell"><section class="hero"><span class="eyebrow">R-002 / ARCHIVED RESEARCH / DATA WORKING COPY</span><h1>Ocean <em>Acidification</em><br>in the data.</h1><p>The original research-note series behind two figures in an early ocean acidification manuscript, including atmospheric CO₂, seawater pH, carbonate chemistry, and coral-cover entries. A record of the research process — not independently validated global observations.</p><div class="hero-note">1960–2025 · 8 research-note years · Original manuscript not accepted by NHSJS</div></section>
 <section class="stats"><div class="stat"><div class="eyebrow">ATMOSPHERIC CO₂</div><strong>+108.74</strong><small>ppm · 1960 → 2025 (research notes)</small></div><div class="stat"><div class="eyebrow">OCEAN pH</div><strong>−0.11</strong><small>units · research-note pH series</small></div><div class="stat"><div class="eyebrow">CARBONATE ION</div><strong>−49.8</strong><small>μmol/kg · simplified model values</small></div><div class="stat"><div class="eyebrow">SERIES LENGTH</div><strong>8</strong><small>year entries in research notes</small></div></section>
